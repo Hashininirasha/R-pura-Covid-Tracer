@@ -1,60 +1,33 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+<Tracer/>
+  
 </template>
 
 <script>
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+import firebase from 'firebase/app';
+import Tracer from './components/tracer.vue'
+var firebaseConfig = {
+    apiKey: "AIzaSyAJkHRkogtyZ9eB1eDB4ia_ztrG1_3JnL4",
+    authDomain: "r-pura-covid-tracer.firebaseapp.com",
+    projectId: "r-pura-covid-tracer",
+    storageBucket: "r-pura-covid-tracer.appspot.com",
+    messagingSenderId: "402661802423",
+    appId: "1:402661802423:web:3e55049d6fa31067646832",
+    measurementId: "G-V2TEC37MRX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  export default{
+    name: 'App',
+      components:{
+        Tracer
+      }
+    
   }
-}
+
 </script>
 
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
