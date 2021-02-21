@@ -2,6 +2,7 @@
     <div>
     <h1>Covid tracer app for shops near by Ratnapura Bus stand</h1>
     <div v-if="loginStatus">
+        <h1>Welcome {{user.displayName}}</h1>
         <button>Cheack In </button>
     </div>
     <div v-else>
@@ -18,7 +19,8 @@ export default {
     name: 'Tracer',
         data() {
             return{
-                loginStatus: false
+                loginStatus: false,
+                user: null
             }
         },
         methods : {
@@ -27,6 +29,8 @@ export default {
                 firebase.auth().signInWithPopup(provider)
                 .then((response)=>{
                     console.log(response);
+                    this.loginStatus = true;
+                    this.user = response.user
                 })
                 .catch((error)=>{
                     console.error(error);
