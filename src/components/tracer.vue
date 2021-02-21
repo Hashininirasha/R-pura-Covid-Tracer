@@ -76,6 +76,18 @@ export default {
                 .catch((error)=>{
                     console.log(error);
                 })
+            },
+            singUserIn(){
+                this.db.collection("Cheack In").add({
+                    placeID : this.selectedcheckin,
+                    timeIn : new Date(),
+                    checkOut : null,
+                    userID : this.user.uid
+                })
+                .then((result)=> {
+                    console.log(result);
+                    console.log("User Checked in");
+                })
             }
         }
     
