@@ -43,6 +43,7 @@ export default {
                     this.user = response.user
                     this.db=firebase.firestore();
                     this.saveUser(this.user);
+                    this.popplaces();
                     
                 })
                 .catch((error)=>{
