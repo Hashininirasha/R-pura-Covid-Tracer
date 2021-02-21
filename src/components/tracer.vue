@@ -64,6 +64,7 @@ export default {
                 this.db.collection('Places').get()
                 .then((result)=>{
                     result.forEach((place)=>{
+                        console.log(place.data());
                         this.placelist.push({
                             'name':place.data().name,
                             'id':place.id,
