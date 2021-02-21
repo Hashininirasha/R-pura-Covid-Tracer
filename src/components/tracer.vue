@@ -57,8 +57,21 @@ export default {
                     .then((documentReference)=>{
                         console.log(documentReference)
                         console.loginStatus("user added");
-                    })
+                    });
 
+            },
+            popplaces(){
+                this.db.collection('Places').get()
+                .then((result)=>{
+                    result.forEach((place)=>{
+                        this.placelist.push({
+                            'name':place.data().name,
+                            'id':place.id,
+
+                        });
+                    })
+                })
+                
             }
         }
     
