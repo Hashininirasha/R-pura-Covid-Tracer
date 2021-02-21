@@ -11,7 +11,7 @@
                 >{{Place.name}}</option>
 
         </select>
-        <button>Cheack In </button>
+        <button v-on:click="signUserIn">Cheack In </button>
     </div>
     <div v-else>
         <button v-on:click="doLogin">Sign In </button>
@@ -77,7 +77,7 @@ export default {
                     console.log(error);
                 })
             },
-            singUserIn(){
+            signUserIn(){
                 this.db.collection("Cheack In").add({
                     placeID : this.selectedcheckin,
                     timeIn : new Date(),
