@@ -5,16 +5,32 @@
         <button>Cheack In </button>
     </div>
     <div v-else>
-        <button>Sign In </button>
+        <button v-on:click="doLogin">Sign In </button>
     </div>
     </div>
 </template>
+
 <script>
+import firebase from 'firebase/app'
+import 'firebase/auth'
+
 export default {
     name: 'Tracer',
-        data(){
+        data() {
             return{
                 loginStatus: false
+            }
+        },
+        methods : {
+            doLogin() {
+                let provider = new firebase.auth.GoogleAuthProvider();
+                firebase.auth().signInWithPopup(provider)
+                .then((response)=>{
+                    console.log(response);
+                })
+                .catch((error)=>{
+                    console.error(error);
+                })
             }
         }
     
