@@ -14,7 +14,7 @@
 <script>
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import 'firebase/firstore'
+import 'firebase/firestore'
 
 export default {
     name: 'Tracer',
@@ -33,6 +33,7 @@ export default {
                     this.loginStatus = true;
                     this.user = response.user
                     this.db=firebase.firestore();
+                    this.saveUser(this.user);
                     
                 })
                 .catch((error)=>{
@@ -40,7 +41,14 @@ export default {
                 })
             },
             saveUser(user){
-
+                    this.db.collection("users").doc(user.uid).set({
+                        id : user.uid,
+                        displayName : user.displayName
+                    })
+                    .then((documentReference)=>{
+                        console.log(documentReference)
+                        console.loginStatus("user added");
+                    })
 
             }
         }
