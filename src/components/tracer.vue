@@ -3,6 +3,14 @@
     <h1>Covid tracer app for shops near by Ratnapura Bus stand</h1>
     <div v-if="loginStatus">
         <h1>Welcome {{user.displayName}}</h1>
+        <select name="Places" v-model="selectedcheckin">
+            <option
+                v-for="Place in placelist"
+                :value="Place.id"
+                v-bind:key="Place.id"
+                >{{Place.name}}</option>
+
+        </select>
         <button>Cheack In </button>
     </div>
     <div v-else>
@@ -21,7 +29,8 @@ export default {
         data() {
             return{
                 loginStatus: false,
-                user: null
+                user: null,
+                placelist: []
             }
         },
         methods : {
