@@ -4,20 +4,23 @@
           
           <div :style="{backgroundImage:'url(bgg.jpg)'}">
               <div class="container">
-    <h1 class="text-muted">Covid tracer app for</h1><br><h1 class="text-muted"> shops near by Ratnapura Bus stand</h1><br></div>
-    <p class="text-justify"><span class="text-white bg-dark"> Ratnapura (Sinhala: රත්නපුර; Tamil: இரத்தினபுரி) ("City of Gems" in Sinhala and Tamil) is a major city in Sri Lanka. It is the capital city of Sabaragamuwa Province, as well as the Ratnapura District, and is a traditional centre for the Sri Lankan gem trade. It is located on the Kalu Ganga (Black River) in south-central Sri Lanka, some 101 km (63 mi) southeast of the country's capital, Colombo. Ratnapura is also spelled as Rathnapura.<br>The name 'Ratnapura' is a Sanskrit word meaning "city of gems", from the Sanskrit words pura (town) and ratna (gemstone).[1] Over 2000 years ago, when the first Buddhist monks arrived here from the north eastern provinces of India namely Bodh-Gaya, Varanasi and Pataliputra, they not only brought with them the Buddhist religion, but since their teachings were mainly in Sanskrit and Pali they also influenced the local language. While candy produced from the jaggery palm is traditionally known in this region as ratnapura, it is more likely that the candy was named for the locale rather than vice versa.[2]</span></p>
+    <h1 class="text-primary">Covid tracer app for</h1><br><h1 class="text-primary"> shops near by Ratnapura Bus stand</h1><br></div>
+    <p class="text-justify"><span class="text-white bg-dark"> Ratnapura,"City of Gems" is a major city in Sri Lanka. It is the capital city of Sabaragamuwa Province, as well as the Ratnapura District, and is a traditional centre for the Sri Lankan gem trade. It is located on the Kalu Ganga (Black River) in south-central Sri Lanka, some 101 km (63 mi) southeast of the country's capital, Colombo. Ratnapura is also spelled as Rathnapura.<br>The name 'Ratnapura' is a Sanskrit word meaning "city of gems", from the Sanskrit words pura (town) and ratna (gemstone).Over 2000 years ago, when the first Buddhist monks arrived here from the north eastern provinces of India namely Bodh-Gaya, Varanasi and Pataliputra, they not only brought with them the Buddhist religion, but since their teachings were mainly in Sanskrit and Pali they also influenced the local language. While candy produced from the jaggery palm is traditionally known in this region as ratnapura, it is more likely that the candy was named for the locale rather than vice versa.</span></p>
+    <p class="text-justify"><span class="text-white bg-dark">any one can put there visited placse to this application..it is good help to anyone tracer it</span></p>
     <div v-if="loginStatus">
-        <h1>Welcome {{user.displayName}}</h1>
+
+
+        <h1 class="text-primary">Welcome {{user.displayName}}</h1>
         
         <select name="Places" v-model="selectedcheckin">
-            <option
+            <option class="btn btn-primary dropdown-toggle"
                 v-for="Place in placelist"
                 :value="Place.id"
                 v-bind:key="Place.id"
                 >{{Place.name}}</option>
 
         </select>
-        <button v-on:click="signUserIn" >Cheack In </button>
+        <button v-on:click="signUserIn" class="btn btn-danger" >Cheack In </button>
     </div>
     <div v-else>
         <button v-on:click="doLogin" class="btn btn-danger">Sign In </button>
