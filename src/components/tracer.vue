@@ -1,5 +1,9 @@
 <template>
+    
     <div class="container">
+          
+          <div :style="{backgroundImage:'url(bgg.jpg)'}">
+
     <h1>Covid tracer app for shops near by Ratnapura Bus stand</h1><br>
     <div v-if="loginStatus">
         <h1>Welcome {{user.displayName}}</h1>
@@ -16,6 +20,7 @@
     </div>
     <div v-else>
         <button v-on:click="doLogin" class="btn btn-danger">Sign In </button>
+    </div>
     </div>
     </div>
 </template>
