@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import firebase from 'firebase/app';
+import firebase from 'firebase/app'
 import Tracer from './components/tracer.vue'
 var firebaseConfig = {
     apiKey: "AIzaSyAJkHRkogtyZ9eB1eDB4ia_ztrG1_3JnL4",
